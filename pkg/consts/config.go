@@ -68,10 +68,7 @@ const (
 // Bandwidth
 var (
 	Bandwidth     = []string{"MB", "KB"}
-	BandwidthMode = []string{
-		"client",
-		"server",
-	}
+	BandwidthMode = []string{"client","server"}
 )
 
 // Log level
