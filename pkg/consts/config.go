@@ -70,8 +70,8 @@ const (
 var (
 	Bandwidth     = []string{"MB", "KB"}
 	BandwidthMode = []string{
-		config.BandwidthLimitModeClient,
-		config.BandwidthLimitModeServer,
+		"client",
+		"server",
 	}
 )
 
