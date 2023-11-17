@@ -38,26 +38,3 @@ jobs:
             bin/*.exe
             bin/*.zip
 
-  release:
-    name: Release
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Collect files
-        uses: actions/download-artifact@v3
-        with:
-          name: assets
-
-      - name: Calculate SHA256 checksum
-        run: sha256sum *.exe *.zip > frpmgr-${{ needs.build.outputs.version }}-sha256-checksums.txt
-
-      - name: Upload release assets
-        uses: shogo82148/actions-upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: |
-            ./*.exe
-            ./*.zip
-            ./*.txt
