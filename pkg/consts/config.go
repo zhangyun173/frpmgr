@@ -1,6 +1,5 @@
 package consts
 
-import "github.com/fatedier/frp/pkg/config"
 
 const RangePrefix = "range:"
 
